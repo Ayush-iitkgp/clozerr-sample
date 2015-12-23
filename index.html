@@ -10,14 +10,14 @@
   <body ng-controller="StoreController as store">
     <!--  Store Header  -->
     <header class="container">
-      <h1 class="text-center jumbotron"> Clozerr </h1>
+      <h1 class="text-center jumbotron page-header"> Clozerr </h1>
     </header>
 
     <!--  Products Container  -->
     <div class="list-group">
       <!--  Product Container  -->
       <div class="list-group-item" ng-repeat="product in store.products">
-        <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+        <h3>{{product.name}} | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
 
         <!-- Image Gallery  -->
         <product-gallery></product-gallery>
