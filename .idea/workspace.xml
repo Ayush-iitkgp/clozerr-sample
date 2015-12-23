@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a613ed6-5a2b-44b5-a4c1-a99b77fbbb8e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-01.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-02.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-03.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-04.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-05.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-06.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-07.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-08.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/gem-09.gif" afterPath="" />
-    </list>
+    <list default="true" id="9a613ed6-5a2b-44b5-a4c1-a99b77fbbb8e" name="Default" comment="" />
     <ignored path="codeschool-shaping-up-with-angular.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12671232">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.7962329">
+              <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -503,8 +493,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12671232">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.7962329">
+          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
           <folding />
         </state>
       </provider>
