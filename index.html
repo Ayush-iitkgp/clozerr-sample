@@ -1,32 +1,28 @@
 <!DOCTYPE html>
-<html ng-app="gemStore">
+<html >
   <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <script type="text/javascript" src="angular.min.js"></script>
+<<<<<<< Updated upstream
     <script type="text/javascript" src="products.js"></script>
     <script type="text/javascript" src="app.js"></script>
+=======
+    <title> Clozerr </title>
+>>>>>>> Stashed changes
   </head>
 
-  <body ng-controller="StoreController as store">
-    <!--  Store Header  -->
-    <header class="container">
-      <h1 class="text-center jumbotron page-header"> Clozerr </h1>
+  <body >
+
+    <header class="container row">
+      <h1 class="text-center col-xs-4 col-xs-offset-5"> <strong> Welcome to Clozerr</strong> </h1>
     </header>
+    <script type="text/javascript" src="fb-login.js"></script>
 
-    <!--  Products Container  -->
-    <div class="list-group">
-      <!--  Product Container  -->
-      <div class="list-group-item" ng-repeat="product in store.products">
-        <h3>{{product.name}} | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
+    <fb:login-button class="text-center" scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button>
 
-        <!-- Image Gallery  -->
-        <product-gallery></product-gallery>
+    <strong><div id="status" class="text-center" ></div></strong>
 
-        <!-- Product Tabs  -->
-        <product-tabs></product-tabs>
-      </div>
 
-    </div>
     <script src='jquery-2.1.4.min.js'></script>
     <script src='bootstrap.min.js'></script>
   </body>
