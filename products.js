@@ -54,4 +54,10 @@
         controllerAs: "gallery"
       };
     });
+
+    app.directive("websiteHeader", function() {
+        return {
+            restrict: "E",
+            templateUrl: "website-header.html"
+    }});
   })();
