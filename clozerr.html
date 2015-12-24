@@ -21,13 +21,13 @@
 <div class="list-group">
     <!--  Product Container  -->
     <div class="list-group-item" ng-repeat="product in store.products">
-        <h3>{{product.name}} | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
+        <h3><a href="#">{{product.name}}</a> | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
 
         <!-- Image Gallery  -->
         <product-gallery></product-gallery>
 
         <!-- Product Tabs  -->
-        <product-tabs></product-tabs>
+        <!-- <product-tabs></product-tabs> -->
     </div>
 
 </div>
