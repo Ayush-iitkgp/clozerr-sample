@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html >
-  <head>
+<html ng-app="gemStore">
+<head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <script type="text/javascript" src="angular.min.js"></script>
-
-    <script type="text/javascript" src="fb-login.js"></script>
-    <style>
-
-      body {
-        background: -webkit-linear-gradient(#93B874, #C9DCB9); /* Chrome 10+, Safari 5.1+ */
-        background: -o-linear-gradient(#93B874, #C9DCB9); /* Opera 11.1+ */
-        background: -moz-linear-gradient(#93B874, #C9DCB9); /* Firefox 3.6+ */
-        background: linear-gradient(#93B874, #C9DCB9); /* Standard syntax (must be last) */
-        background-color: #93B874; /* It's a good idea to set a background color in case the gradient doesn't load */
-      }
-    </style>
+    <script type="text/javascript" src="products.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <title> Clozerr </title>
-  </head>
+</head>
 
-  <body>
+<body ng-controller="StoreController as store">
+<!--  Store Header  -->
 
-    <header class="container row">
-      <h1 class="text-center col-xs-4 col-xs-offset-5"> <strong> Welcome to Clozerr</strong> </h1>
-    </header>
+<header class="container row">
+    <h1 class="text-center col-xs-4 col-xs-offset-5"> <strong> Welcome to Clozerr</strong> </h1>
+</header>
+<!-- Website Header -->
+<website-header></website-header>
 
+<!--  Products Container  -->
+<div class="list-group">
+    <!--  Product Container  -->
+    <div class="list-group-item" ng-repeat="product in store.products">
+        <h3><a href="#" title="Click to get offers">{{product.name}}</a> | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
 
+        <!-- Image Gallery  -->
+        <product-gallery></product-gallery>
 
-    <fb:login-button class="text-center" scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button>
+        <!-- Product Tabs  -->
+        <!-- <product-tabs></product-tabs> -->
+    </div>
 
-    <strong><div id="status" class="text-center" ></div></strong>
-
-
-    <script src='jquery-2.1.4.min.js'></script>
-    <script src='bootstrap.min.js'></script>
-  </body>
+</div>
+<script src='jquery-2.1.4.min.js'></script>
+<script src='bootstrap.min.js'></script>
+</body>
 </html>
