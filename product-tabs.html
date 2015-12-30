@@ -2,13 +2,13 @@
 <section>
   <ul class="nav nav-pills">
     <li ng-class="{ active:tab.isSet(1) }">
-      <a href ng-click="tab.setTab(1)">Address</a>
+      <a href ng-click="tab.setTab(1)">Description</a>
     </li>
     <li ng-class="{ active:tab.isSet(2) }">
-      <a href ng-click="tab.setTab(2)">Description</a>
+      <a href ng-click="tab.setTab(2)">Get Direction</a>
     </li>
-    <li ng-class="{ active:tab.isSet(3) }">
-      <a href ng-click="tab.setTab(3)">Review</a>
+    <<li ng-class="{ active:tab.isSet(3) }">
+      <a href ng-click="tab.setTab(3)">Rewards</a>
     </li>
   </ul>
 
@@ -16,9 +16,9 @@
   <product-description ng-show="tab.isSet(1)" ></product-description>
 
   <!--  Spec Tab's Content  -->
-  <div product-specs ng-show="tab.isSet(2)"></div>
+  <vendor-location ng-show="tab.isSet(2)"></vendor-location>
 
-  <!--  Review Tab's Content  -->
-  <product-reviews ng-show="tab.isSet(3)"></product-reviews>
+  <!--  Review Tab's Content -->
+  <vendor-rewards ng-show="tab.isSet(3)"></vendor-rewards>
 
 </section>

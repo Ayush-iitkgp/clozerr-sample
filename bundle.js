@@ -10,7 +10,7 @@ exports.ClozerrHomeController = function($scope, $http){
     });
 };
 
-exports.ReviewController = function() {
+exports.ProductReviewsController = function() {
     this.review = {};
 
     this.addReview = function(product) {
@@ -29,7 +29,7 @@ exports.ProductGalleryController = function() {
 };
 
 exports.ProductTabsController = function() {
-    this.tab = 1;
+    this.tab = 0;
 
     this.isSet = function(checkTab) {
         return this.tab === checkTab;
@@ -45,6 +45,7 @@ exports.VendorDetailsController = function($scope, $routeParams, $http) {
     var encoded = encodeURIComponent($routeParams.id);
     //console.log(encoded);
     //console.log('api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded);
+    $scope.vendor = {};
 
     $http.
     get('http://api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded).
@@ -65,21 +66,23 @@ exports.VendorDetailsController = function($scope, $routeParams, $http) {
 exports.productDescription = function() {
         return {
             restrict: 'E',
-            templateUrl: "product-description.html"
+            templateUrl: "product-description.html",
+            controller: 'VendorDetailsController'
         };
 };
 
 exports.productReviews = function() {
         return {
             restrict: 'E',
+            controller: 'ProductReviewsController',
             templateUrl: "product-reviews.html"
         };
 };
 
-exports.productSpecs = function() {
+exports.vendorLocation = function() {
         return {
-            restrict:"A",
-            templateUrl: "product-specs.html"
+            restrict:"E",
+            templateUrl: "vendor-location.html"
         };
 };
 
@@ -123,6 +126,14 @@ exports.clozerrHome = function(){
         restrict: "E",
         controller:"ClozerrHomeController",
         templateUrl: "clozerr-home.html"
+    };
+};
+
+
+exports.vendorRewards = function(){
+    return {
+        restrict: "E",
+        templateUrl: "vendor-rewards.html"
     };
 };
 

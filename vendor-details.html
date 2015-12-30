@@ -1,3 +1,6 @@
+<product-tabs></product-tabs>
+
+
 <div class="product-details">
 
   <div class="product-details-content">
@@ -7,6 +10,8 @@
     <div class="details-right">
       <h1>{{vendor.name}}</h1>
       <div>{{vendor.address}}</div>
+        <Strong>Call :</Strong>{{" " + vendor.phone}}
+        <br>
       <div class="cart-button">
         <i class="fa fa-cart-plus"></i>
         Checkout
@@ -15,7 +20,13 @@
     <div style="clear: both"></div>
 
     <div>
-      <Strong>Call :</Strong>{{vendor.phone}}
+
     </div>
   </div>
 </div>
+
+
+<!--<product-description></product-description>
+<product-specs></product-specs>
+<product-reviews></product-reviews> !-->
+

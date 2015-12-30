@@ -1,21 +1,23 @@
 exports.productDescription = function() {
         return {
             restrict: 'E',
-            templateUrl: "product-description.html"
+            templateUrl: "product-description.html",
+            controller: 'VendorDetailsController'
         };
 };
 
 exports.productReviews = function() {
         return {
             restrict: 'E',
+            controller: 'ProductReviewsController',
             templateUrl: "product-reviews.html"
         };
 };
 
-exports.productSpecs = function() {
+exports.vendorLocation = function() {
         return {
-            restrict:"A",
-            templateUrl: "product-specs.html"
+            restrict:"E",
+            templateUrl: "vendor-location.html"
         };
 };
 
@@ -59,5 +61,13 @@ exports.clozerrHome = function(){
         restrict: "E",
         controller:"ClozerrHomeController",
         templateUrl: "clozerr-home.html"
+    };
+};
+
+
+exports.vendorRewards = function(){
+    return {
+        restrict: "E",
+        templateUrl: "vendor-rewards.html"
     };
 };
