@@ -3,8 +3,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <script type="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="products.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="bundle.js"></script>
+    <!-- <script type="text/javascript" src="require.js"></script> !-->
+
     <title> Clozerr </title>
 </head>
 
@@ -20,8 +21,8 @@
 <!--  Products Container  -->
 <div class="list-group">
     <!--  Product Container  -->
-    <div class="list-group-item" ng-repeat="product in store.products">
-        <h3><a href="#" title="Click to get offers">{{product.name}}</a> | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
+    <div class="list-group-item" ng-repeat="product in products">
+        <h3><a ng-href="#/vendor/{{product._id}}" title="Click to get offers">{{product.name}}</a> | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
 
         <!-- Image Gallery  -->
         <product-gallery></product-gallery>

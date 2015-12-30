@@ -1,11 +1,14 @@
 (function() {
   var app = angular.module('gemStore', ['store-directives']);
 
-  app.controller('StoreController', ['$http', function($http){
-    var store = this;
-    store.products = [];
+  app.controller('StoreController', ['$scope', '$http', function($scope, $http){
+    //var store = this;
+    $scope.products = [];
     $http.get('http://api.clozerr.com/v2/vendor/search/near/?latitude=10&longitude=10&offset=0').success(function(data){
-      store.products = data;
+
+      $scope.products = data;
+      //console.log($scope.products);
+
     });
   }]);
 
