@@ -18,13 +18,18 @@ _.each(directives, function(directive, name) {
 //});
 
 
-/*
+
 var app = angular.module('mean-retail', ['mean-retail.components', 'ngRoute']);
 
 app.config(function($routeProvider) {
     $routeProvider.
     when('/vendor/:id', {
         template: '<vendor-details></vendor-details>'
+    })
+    .when('/',{
+        template:'<clozerr-home></clozerr-home>'
+
     });
-});  */
+
+});
 

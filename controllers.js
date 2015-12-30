@@ -42,9 +42,11 @@ exports.ProductTabsController = function() {
 
 exports.VendorDetailsController = function($scope, $routeParams, $http) {
     var encoded = encodeURIComponent($routeParams.id);
+    //console.log(encoded);
+    //console.log('api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded);
 
     $http.
-    get('api.clozerr.com/v2/vendor/details/get?vendor_id=id' + encoded).
+    get('http://api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded).
     success(function(data) {
         $scope.vendor = data;
     });

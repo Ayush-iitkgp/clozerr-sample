@@ -58,6 +58,6 @@ exports.clozerrHome = function(){
     return {
         restrict: "E",
         controller:"ClozerrHomeController",
-        tempelateUrl: "clozerr-home.html"
+        templateUrl: "clozerr-home.html"
     };
 };

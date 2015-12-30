@@ -43,9 +43,11 @@ exports.ProductTabsController = function() {
 
 exports.VendorDetailsController = function($scope, $routeParams, $http) {
     var encoded = encodeURIComponent($routeParams.id);
+    //console.log(encoded);
+    //console.log('api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded);
 
     $http.
-    get('api.clozerr.com/v2/vendor/details/get?vendor_id=id' + encoded).
+    get('http://api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded).
     success(function(data) {
         $scope.vendor = data;
     });
@@ -109,16 +111,18 @@ exports.websiteHeader = function() {
 
 exports.vendorDetails = function() {
     return {
-        controller: 'VendorDetailsController',
-        templateUrl: 'vendor-details.html'
+        restrict: "E",
+        controller: "VendorDetailsController",
+        templateUrl: "vendor-details.html"
     };
 };
 
 
 exports.clozerrHome = function(){
     return {
-        controller:'ClozerrHomeController',
-        tempelateUrl: 'clozerr-home.html'
+        restrict: "E",
+        controller:"ClozerrHomeController",
+        templateUrl: "clozerr-home.html"
     };
 };
 
@@ -143,14 +147,22 @@ _.each(directives, function(directive, name) {
 //});
 
 
+
 var app = angular.module('mean-retail', ['mean-retail.components', 'ngRoute']);
 
 app.config(function($routeProvider) {
     $routeProvider.
     when('/vendor/:id', {
         template: '<vendor-details></vendor-details>'
+    })
+    .when('/',{
+        template:'<clozerr-home></clozerr-home>'
+
     });
+
 });
+
+
 },{"./controllers":1,"./directives":2,"underscore":4}],4:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
