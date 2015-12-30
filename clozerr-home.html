@@ -1,0 +1,11 @@
+<div class="list-group">
+    <div class="list-group-item" ng-repeat="product in products">
+        <h3><a ng-href="#/vendor/{{product._id}}" title="Click to get offers">{{product.name}}</a> | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
+
+        <!-- Image Gallery  -->
+        <product-gallery></product-gallery>
+
+        <!-- Product Tabs  -->
+        <!-- <product-tabs></product-tabs> -->
+    </div>
+</div>

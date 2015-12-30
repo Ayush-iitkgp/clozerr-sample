@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-<html ng-app="gemStore">
+<html ng-app="mean-retail.components">
 <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="bundle.js"></script>
-    <!-- <script type="text/javascript" src="require.js"></script> !-->
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
     <title> Clozerr </title>
 </head>
 
-<body ng-controller="StoreController as store">
-<!--  Store Header  -->
-
+<body>
 <header class="container row">
     <h1 class="text-center col-xs-4 col-xs-offset-5"> <strong> Welcome to Clozerr</strong> </h1>
 </header>
+
 <!-- Website Header -->
 <website-header></website-header>
 
-<!--  Products Container  -->
-<div class="list-group">
-    <!--  Product Container  -->
-    <div class="list-group-item" ng-repeat="product in products">
-        <h3><a ng-href="#/vendor/{{product._id}}" title="Click to get offers">{{product.name}}</a> | {{product.caption}} <em class="pull-right">{{product.distance}} km</em></h3>
+<!-- Clozerr Home !-->
+<clozerr-home></clozerr-home>
 
-        <!-- Image Gallery  -->
-        <product-gallery></product-gallery>
-
-        <!-- Product Tabs  -->
-        <!-- <product-tabs></product-tabs> -->
-    </div>
-
-</div>
 <script src='jquery-2.1.4.min.js'></script>
 <script src='bootstrap.min.js'></script>
+
 </body>
 </html>

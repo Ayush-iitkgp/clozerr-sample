@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-exports.StoreController = function($scope, $http){
+exports.ClozerrHomeController = function($scope, $http){
     //var store = this;
     $scope.products = [];
     $http.get('http://api.clozerr.com/v2/vendor/search/near/?latitude=10&longitude=10&offset=0').success(function(data){
@@ -39,6 +39,23 @@ exports.ProductTabsController = function() {
         this.tab = activeTab;
     };
 };
+
+
+exports.VendorDetailsController = function($scope, $routeParams, $http) {
+    var encoded = encodeURIComponent($routeParams.id);
+
+    $http.
+    get('api.clozerr.com/v2/vendor/details/get?vendor_id=id' + encoded).
+    success(function(data) {
+        $scope.vendor = data;
+    });
+
+    setTimeout(function() {
+        $scope.$emit('VendorDetailsController');
+    }, 0);
+};
+
+
 
 
 
@@ -89,13 +106,29 @@ exports.websiteHeader = function() {
         }
 };
 
+
+exports.vendorDetails = function() {
+    return {
+        controller: 'VendorDetailsController',
+        templateUrl: 'vendor-details.html'
+    };
+};
+
+
+exports.clozerrHome = function(){
+    return {
+        controller:'ClozerrHomeController',
+        tempelateUrl: 'clozerr-home.html'
+    };
+};
+
 },{}],3:[function(require,module,exports){
 var controllers = require('./controllers');
 var directives = require('./directives');
 //var services = require('./services');
 var _ = require('underscore');
 
-var components = angular.module('gemStore', ['ng']);
+var components = angular.module('mean-retail.components', ['ng']);
 
 _.each(controllers, function(controller, name) {
     components.controller(name, controller);
@@ -108,6 +141,16 @@ _.each(directives, function(directive, name) {
 //_.each(services, function(factory, name) {
   //  components.factory(name, factory);
 //});
+
+
+var app = angular.module('mean-retail', ['mean-retail.components', 'ngRoute']);
+
+app.config(function($routeProvider) {
+    $routeProvider.
+    when('/vendor/:id', {
+        template: '<vendor-details></vendor-details>'
+    });
+});
 },{"./controllers":1,"./directives":2,"underscore":4}],4:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org

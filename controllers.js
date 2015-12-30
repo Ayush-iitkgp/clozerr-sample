@@ -1,4 +1,4 @@
-exports.StoreController = function($scope, $http){
+exports.ClozerrHomeController = function($scope, $http){
     //var store = this;
     $scope.products = [];
     $http.get('http://api.clozerr.com/v2/vendor/search/near/?latitude=10&longitude=10&offset=0').success(function(data){
@@ -38,5 +38,22 @@ exports.ProductTabsController = function() {
         this.tab = activeTab;
     };
 };
+
+
+exports.VendorDetailsController = function($scope, $routeParams, $http) {
+    var encoded = encodeURIComponent($routeParams.id);
+
+    $http.
+    get('api.clozerr.com/v2/vendor/details/get?vendor_id=id' + encoded).
+    success(function(data) {
+        $scope.vendor = data;
+    });
+
+    setTimeout(function() {
+        $scope.$emit('VendorDetailsController');
+    }, 0);
+};
+
+
 
 

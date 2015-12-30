@@ -43,3 +43,21 @@ exports.websiteHeader = function() {
             templateUrl: "website-header.html"
         }
 };
+
+
+exports.vendorDetails = function() {
+    return {
+        restrict: "E",
+        controller: "VendorDetailsController",
+        templateUrl: "vendor-details.html"
+    };
+};
+
+
+exports.clozerrHome = function(){
+    return {
+        restrict: "E",
+        controller:"ClozerrHomeController",
+        tempelateUrl: "clozerr-home.html"
+    };
+};
