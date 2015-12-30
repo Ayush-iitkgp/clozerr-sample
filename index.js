@@ -29,6 +29,16 @@ app.config(function($routeProvider) {
     .when('/',{
         template:'<clozerr-home></clozerr-home>'
 
+    }).when('/account/favourites/:id',{
+        template:'<user-favourites></user-favourites>'
+
+    }).when('/account/rewards/:id',{
+        template:'<user-rewards></user-rewards>'
+
+    }).when('/account/pinned/:id',{
+        template:'<user-pinned></user-pinned>'
+
+
     });
 
 });

@@ -42,6 +42,7 @@ exports.productGallery = function() {
 exports.websiteHeader = function() {
         return {
             restrict: "E",
+            controller: "WebsiteHeaderController",
             templateUrl: "website-header.html"
         }
 };
@@ -68,6 +69,34 @@ exports.clozerrHome = function(){
 exports.vendorRewards = function(){
     return {
         restrict: "E",
+        controller:"VendorRewardsController",
         templateUrl: "vendor-rewards.html"
+    };
+};
+
+exports.userFavourites = function(){
+    return {
+        restrict:"E",
+        controller:"WebsiteHeaderController",
+        templateUrl: "user-favourites.html"
+
+    };
+};
+
+exports.userRewards = function(){
+    return {
+        restrict:"E",
+        controller:"WebsiteHeaderController",
+        templateUrl: "user-rewards.html"
+
+    };
+};
+
+exports.userPinned = function(){
+    return {
+        restrict:"E",
+        controller:"WebsiteHeaderController",
+        templateUrl: "user-pinned.html"
+
     };
 };
