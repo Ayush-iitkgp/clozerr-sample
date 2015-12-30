@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="388dca48-970b-4195-9985-0accd41e0b58" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/product-description.html" afterPath="$PROJECT_DIR$/vendor-description.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/product-tabs.html" afterPath="$PROJECT_DIR$/vendor-tabs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundle.js" afterPath="$PROJECT_DIR$/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers.js" afterPath="$PROJECT_DIR$/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives.js" afterPath="$PROJECT_DIR$/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/products.js" afterPath="$PROJECT_DIR$/products.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor-details.html" afterPath="$PROJECT_DIR$/vendor-details.html" />
     </list>
     <ignored path="clozerr-sample.iws" />
@@ -70,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendor-details.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="vendor-details.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendor-details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.46575344">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -92,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendorDetails.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vendorDetails.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendorDetails.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9606164">
+            <state vertical-scroll-proportion="-21.576923">
               <caret line="33" column="118" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="118" />
               <folding />
             </state>
@@ -160,8 +153,8 @@
         <option value="$PROJECT_DIR$/vendor-rewards.html" />
         <option value="$PROJECT_DIR$/directives.js" />
         <option value="$PROJECT_DIR$/controllers.js" />
-        <option value="$PROJECT_DIR$/vendor-details.html" />
         <option value="$PROJECT_DIR$/vendor-tabs.html" />
+        <option value="$PROJECT_DIR$/vendor-details.html" />
       </list>
     </option>
   </component>
@@ -431,16 +424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor-description.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923">
@@ -467,9 +450,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendorDetails.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9606164">
+        <state vertical-scroll-proportion="-21.576923">
           <caret line="33" column="118" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="118" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46575344">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
