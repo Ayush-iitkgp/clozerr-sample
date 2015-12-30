@@ -28,7 +28,7 @@ exports.ProductGalleryController = function() {
     };
 };
 
-exports.ProductTabsController = function() {
+exports.VendorTabsController = function() {
     this.tab = 0;
 
     this.isSet = function(checkTab) {
@@ -63,10 +63,10 @@ exports.VendorDetailsController = function($scope, $routeParams, $http) {
 
 
 },{}],2:[function(require,module,exports){
-exports.productDescription = function() {
+exports.vendorDescription = function() {
         return {
             restrict: 'E',
-            templateUrl: "product-description.html",
+            templateUrl: "vendor-description.html",
             controller: 'VendorDetailsController'
         };
 };
@@ -86,11 +86,11 @@ exports.vendorLocation = function() {
         };
 };
 
-exports.productTabs = function() {
+exports.vendorTabs = function() {
         return {
             restrict: "E",
-            templateUrl: "product-tabs.html",
-            controller: 'ProductTabsController',
+            templateUrl: "vendor-tabs.html",
+            controller: 'VendorTabsController',
             controllerAs: "tab"
         };
 };

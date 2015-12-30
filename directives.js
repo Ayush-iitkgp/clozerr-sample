@@ -1,7 +1,7 @@
-exports.productDescription = function() {
+exports.vendorDescription = function() {
         return {
             restrict: 'E',
-            templateUrl: "product-description.html",
+            templateUrl: "vendor-description.html",
             controller: 'VendorDetailsController'
         };
 };
@@ -21,11 +21,11 @@ exports.vendorLocation = function() {
         };
 };
 
-exports.productTabs = function() {
+exports.vendorTabs = function() {
         return {
             restrict: "E",
-            templateUrl: "product-tabs.html",
-            controller: 'ProductTabsController',
+            templateUrl: "vendor-tabs.html",
+            controller: 'VendorTabsController',
             controllerAs: "tab"
         };
 };

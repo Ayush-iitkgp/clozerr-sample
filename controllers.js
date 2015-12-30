@@ -27,7 +27,7 @@ exports.ProductGalleryController = function() {
     };
 };
 
-exports.ProductTabsController = function() {
+exports.VendorTabsController = function() {
     this.tab = 0;
 
     this.isSet = function(checkTab) {

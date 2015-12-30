@@ -4,7 +4,7 @@
     app.directive("productDescription", function() {
       return {
         restrict: 'E',
-        templateUrl: "product-description.html"
+        templateUrl: "vendor-description.html"
       };
     });
 
@@ -25,7 +25,7 @@
     app.directive("productTabs", function() {
       return {
         restrict: "E",
-        templateUrl: "product-tabs.html",
+        templateUrl: "vendor-tabs.html",
         controller: function() {
           this.tab = 1;
 
