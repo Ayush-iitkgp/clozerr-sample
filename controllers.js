@@ -20,9 +20,30 @@ exports.ClozerrHomeController = function($scope, $rootScope, $http){
     $http.get('http://api.clozerr.com/v2/vendor/search/near/?clozerr_token='+encode+'&latitude=10&longitude=10&offset=0').success(function(data){
 
         $scope.products = data;
-        //console.log($scope.products);
+        $rootScope.vendorId = data[0]._id;
+        console.log(data[0]._id);
 
     });
+};
+
+exports.VendorDetailsController = function($scope, $rootScope,$routeParams, $http) {
+    var encode = encodeURIComponent($routeParams.id);
+    //var vendorId = encodeURIComponent($routeParams.vendorId);
+    //console.log(encoded);
+    //console.log('api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded);
+    $scope.vendor = {};
+
+    $http.
+    get('http://api.clozerr.com/v2/vendor/details/get?vendor_id=' + encode).
+    success(function(data) {
+        $scope.vendor = data;
+        //$rootScope.vendorId = data._id;
+        //console.log("vendorId from VendorDetailsController is "+data._id);
+    });
+
+    //setTimeout(function() {
+    //$scope.$emit('VendorDetailsController');
+    //}, 0);
 };
 
 exports.ProductReviewsController = function() {
@@ -57,8 +78,8 @@ exports.VendorTabsController = function() {
 exports.VendorOffersController = function ($scope,$rootScope, $http) {
     //$scope.userToke = $rootScope.userToken;
     //$scope.vendorI = $rootScope.vendorId;
-    //console.log("userToken from VendorRewardsController " + $scope.userToke);
-    //console.log("vendorId from VendorRewardsController " + $scope.vendorI);
+    console.log("userToken from VendorRewardsController " + $rootScope.userToken);
+    console.log("vendorId from VendorRewardsController " + $rootScope.vendorId);
     var encodedUserToken = encodeURIComponent($rootScope.userToken);
     var encodedVendorId = encodeURIComponent($rootScope.vendorId);
     $http.
@@ -72,24 +93,7 @@ exports.VendorOffersController = function ($scope,$rootScope, $http) {
     });
 };
 
-exports.VendorDetailsController = function($scope, $rootScope,$routeParams, $http) {
-    var encode = encodeURIComponent($routeParams.id);
-    //console.log(encoded);
-    //console.log('api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded);
-    $scope.vendor = {};
 
-    $http.
-    get('http://api.clozerr.com/v2/vendor/details/get?vendor_id=' + encode).
-    success(function(data) {
-        $scope.vendor = data;
-        $rootScope.vendorId = data._id;
-        console.log("vendorId from VendorDetailsController is "+data._id);
-    });
-
-    //setTimeout(function() {
-        //$scope.$emit('VendorDetailsController');
-    //}, 0);
-};
 
 
 
