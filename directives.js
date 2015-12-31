@@ -66,11 +66,11 @@ exports.clozerrHome = function(){
 };
 
 
-exports.vendorRewards = function(){
+exports.vendorOffers = function(){
     return {
         restrict: "E",
-        controller:"VendorRewardsController",
-        templateUrl: "vendor-rewards.html"
+        controller:"VendorOffersController",
+        templateUrl: "vendor-offers.html"
     };
 };
 

@@ -1,6 +1,6 @@
 var controllers = require('./controllers');
 var directives = require('./directives');
-//var services = require('./services');
+var services = require('./services');
 var _ = require('underscore');
 
 var components = angular.module('mean-retail.components', ['ng']);
@@ -14,7 +14,7 @@ _.each(directives, function(directive, name) {
 });
 
 //_.each(services, function(factory, name) {
-  //  components.factory(name, factory);
+//    components.factory(name, factory);
 //});
 
 

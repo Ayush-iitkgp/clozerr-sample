@@ -7,8 +7,8 @@
     <li ng-class="{ active:tab.isSet(2) }">
       <a href ng-click="tab.setTab(2)">Get Direction</a>
     </li>
-    <<li ng-class="{ active:tab.isSet(3) }">
-      <a href ng-click="tab.setTab(3)">Rewards</a>
+    <li ng-class="{ active:tab.isSet(3) }">
+      <a href ng-click="tab.setTab(3)">Offers</a>
     </li>
   </ul>
 
@@ -19,6 +19,6 @@
   <vendor-location ng-show="tab.isSet(2)"></vendor-location>
 
   <!--  Review Tab's Content -->
-  <vendor-rewards ng-show="tab.isSet(3)"></vendor-rewards>
+  <vendor-offers ng-show="tab.isSet(3)"></vendor-offers>
 
 </section>

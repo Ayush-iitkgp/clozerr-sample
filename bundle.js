@@ -1,8 +1,24 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-exports.ClozerrHomeController = function($scope, $http){
+exports.WebsiteHeaderController = function($scope,$rootScope,$http){
+    //console.log("Value of $response "+ $response.res);
+    //$rootScope.response = {};
+    //console.log($scope.response);
+    $scope.response = {};
+
+    $http.
+        get('http://api.clozerr.com/v2/auth/login/facebook/?token=CAAJJHUzbXhsBAPe3kgz5UbPhvtzGxyIpVETCRYZAUKRhJqoGDEl8sZCLb6AmsQNZC9KtYVOs0m5b25jcZAI6SkSCdlDdGQZAM8k1iIA1MpZCk4rboced31uh0zZCJxoEKNI81QuaU7EiSe9hE7ZA5uYn8Fox5JSpyobaxhVVWsG6v0nUVst2EZCJV')
+        .success(function (data){
+            $scope.response = data;
+            $rootScope.userToken = data.token;
+            //console.log("Value of $rootScope.response is: "+ $rootScope.response);
+        });
+};
+
+exports.ClozerrHomeController = function($scope, $rootScope, $http){
     //var store = this;
+    var encode = encodeURIComponent($rootScope.userToken);
     $scope.products = [];
-    $http.get('http://api.clozerr.com/v2/vendor/search/near/?latitude=10&longitude=10&offset=0').success(function(data){
+    $http.get('http://api.clozerr.com/v2/vendor/search/near/?clozerr_token='+encode+'&latitude=10&longitude=10&offset=0').success(function(data){
 
         $scope.products = data;
         //console.log($scope.products);
@@ -39,40 +55,48 @@ exports.VendorTabsController = function() {
         this.tab = activeTab;
     };
 };
+exports.VendorOffersController = function ($scope,$rootScope, $http) {
+    //$scope.userToke = $rootScope.userToken;
+    //$scope.vendorI = $rootScope.vendorId;
+    //console.log("userToken from VendorRewardsController " + $scope.userToke);
+    //console.log("vendorId from VendorRewardsController " + $scope.vendorI);
+    var encodedUserToken = encodeURIComponent($rootScope.userToken);
+    var encodedVendorId = encodeURIComponent($rootScope.vendorId);
+    $http.
+    get('http://api.clozerr.com/v2/vendor/offers/rewardspage?access_token='+ encodedUserToken +'&vendor_id='+ encodedVendorId).
+    success(function(data){
+        $scope.offers = data.offers;
+        console.log($scope.offers);
 
 
-exports.VendorDetailsController = function($scope, $routeParams, $http) {
-    var encoded = encodeURIComponent($routeParams.id);
+
+    });
+};
+
+exports.VendorDetailsController = function($scope, $rootScope,$routeParams, $http) {
+    var encode = encodeURIComponent($routeParams.id);
     //console.log(encoded);
     //console.log('api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded);
     $scope.vendor = {};
 
     $http.
-    get('http://api.clozerr.com/v2/vendor/details/get?vendor_id=' + encoded).
+    get('http://api.clozerr.com/v2/vendor/details/get?vendor_id=' + encode).
     success(function(data) {
         $scope.vendor = data;
+        $rootScope.vendorId = data._id;
+        //console.log("vendorId from VendorDetailsController is "+data._id);
     });
 
-    setTimeout(function() {
-        $scope.$emit('VendorDetailsController');
-    }, 0);
+    //setTimeout(function() {
+        //$scope.$emit('VendorDetailsController');
+    //}, 0);
 };
 
 
-exports.VendorRewardsController = function(){
-
-};
 
 
-exports.WebsiteHeaderController = function($scope,$http){
-    $scope.response = {};
 
-    $http.
-        get('http://api.clozerr.com/v2/auth/login/facebook/?token=CAAJJHUzbXhsBAPe3kgz5UbPhvtzGxyIpVETCRYZAUKRhJqoGDEl8sZCLb6AmsQNZC9KtYVOs0m5b25jcZAI6SkSCdlDdGQZAM8k1iIA1MpZCk4rboced31uh0zZCJxoEKNI81QuaU7EiSe9hE7ZA5uYn8Fox5JSpyobaxhVVWsG6v0nUVst2EZCJV')
-        .success(function (data){
-            $scope.response = data;
-        });
-};
+
 
 
 
@@ -146,18 +170,44 @@ exports.clozerrHome = function(){
 };
 
 
-exports.vendorRewards = function(){
+exports.vendorOffers = function(){
     return {
         restrict: "E",
-        controller:"VendorRewardsController",
-        templateUrl: "vendor-rewards.html"
+        controller:"VendorOffersController",
+        templateUrl: "vendor-offers.html"
     };
 };
 
+exports.userFavourites = function(){
+    return {
+        restrict:"E",
+        controller:"WebsiteHeaderController",
+        templateUrl: "user-favourites.html"
+
+    };
+};
+
+exports.userRewards = function(){
+    return {
+        restrict:"E",
+        controller:"WebsiteHeaderController",
+        templateUrl: "user-rewards.html"
+
+    };
+};
+
+exports.userPinned = function(){
+    return {
+        restrict:"E",
+        controller:"WebsiteHeaderController",
+        templateUrl: "user-pinned.html"
+
+    };
+};
 },{}],3:[function(require,module,exports){
 var controllers = require('./controllers');
 var directives = require('./directives');
-//var services = require('./services');
+var services = require('./services');
 var _ = require('underscore');
 
 var components = angular.module('mean-retail.components', ['ng']);
@@ -171,7 +221,7 @@ _.each(directives, function(directive, name) {
 });
 
 //_.each(services, function(factory, name) {
-  //  components.factory(name, factory);
+//    components.factory(name, factory);
 //});
 
 
@@ -186,12 +236,44 @@ app.config(function($routeProvider) {
     .when('/',{
         template:'<clozerr-home></clozerr-home>'
 
+    }).when('/account/favourites/:id',{
+        template:'<user-favourites></user-favourites>'
+
+    }).when('/account/rewards/:id',{
+        template:'<user-rewards></user-rewards>'
+
+    }).when('/account/pinned/:id',{
+        template:'<user-pinned></user-pinned>'
+
+
     });
 
 });
 
 
-},{"./controllers":1,"./directives":2,"underscore":4}],4:[function(require,module,exports){
+},{"./controllers":1,"./directives":2,"./services":4,"underscore":5}],4:[function(require,module,exports){
+/**
+ * Created by Pandey on 12/31/2015.
+ */
+
+exports.$response = function($http) {
+    var res = {};
+
+    $http.
+        get('http://api.clozerr.com/v2/auth/login/facebook/?token=CAAJJHUzbXhsBAPe3kgz5UbPhvtzGxyIpVETCRYZAUKRhJqoGDEl8sZCLb6AmsQNZC9KtYVOs0m5b25jcZAI6SkSCdlDdGQZAM8k1iIA1MpZCk4rboced31uh0zZCJxoEKNI81QuaU7EiSe9hE7ZA5uYn8Fox5JSpyobaxhVVWsG6v0nUVst2EZCJV').
+        success(function(data) {
+            res = data;
+            //console.log(res);
+
+        });
+
+    return {
+        res:res
+    };
+};
+
+
+},{}],5:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
