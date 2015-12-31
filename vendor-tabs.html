@@ -8,7 +8,7 @@
       <a href ng-click="tab.setTab(2)">Get Direction</a>
     </li>
     <li ng-class="{ active:tab.isSet(3) }">
-      <a href ng-click="tab.setTab(3)">Offers</a>
+      <a ng-href="#/vendor/offers/rewardspage/vendor/{{vendorId}}">Offers</a>
     </li>
   </ul>
 
@@ -19,6 +19,6 @@
   <vendor-location ng-show="tab.isSet(2)"></vendor-location>
 
   <!--  Review Tab's Content -->
-  <vendor-offers ng-show="tab.isSet(3)"></vendor-offers>
+  <!-- <vendor-offers ng-show="tab.isSet(3)"></vendor-offers> !-->
 
 </section>

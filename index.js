@@ -39,6 +39,8 @@ app.config(function($routeProvider) {
         template:'<user-pinned></user-pinned>'
 
 
+    }).when('/vendor/offers/rewardspage/vendor/:id',{
+        template:'<vendor-offers></vendor-offers>'
     });
 
 });

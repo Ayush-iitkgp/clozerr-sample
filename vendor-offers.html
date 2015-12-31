@@ -1,6 +1,13 @@
-<div>{{"Global userToken Value "+ userToken}}</div>
-<div>{{"Global vendorId Value "+ vendorId}}</div>
+<!--<div>{{"Global userToken Value "+ userToken}}</div>
+<div>{{"Global vendorId Value "+ vendorId}}</div> !-->
 
-<div ng-repeat="offer in offers">
-    {{offer.caption}}
-</div>
+
+<!--<vendor-tabs></vendor-tabs> !-->
+
+
+        <div ng-repeat="offer in offers">
+            <h3><em class="pull-right">{{offer.caption}}</em></h3><br>
+        </div>
+
+<vendor-details></vendor-details>
+
