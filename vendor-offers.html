@@ -4,10 +4,16 @@
 
 <!--<vendor-tabs></vendor-tabs> !-->
 
-
-        <div ng-repeat="offer in offers">
-            <h3><em class="pull-right">{{offer.caption}}</em></h3><br>
+<div class="list-group">
+    <div class="list-group-item" ng-repeat="offer in offers">
+        <h3><strong>{{offer.caption}}</strong>|<em>{{offer.description}}</em></h3>
+        <div class="img-wrap">
+            <img ng-src={{offer.image}} alt="{{offer.caption}}" height="40" width="80"/>
         </div>
+        <button ng-show={{offer.unlocked}} class="btn btn-default">CheckIn</button>
+            <!--<h5>{{offer._id}}</h5> !-->
+    </div>
+</div>
 
 <vendor-details></vendor-details>
 
