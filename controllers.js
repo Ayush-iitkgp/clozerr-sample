@@ -81,24 +81,49 @@ exports.VendorOffersController = function ($scope, $rootScope, $routeParams, $ht
     //$scope.vendorI = $rootScope.vendorId;
     //console.log("userToken from VendorRewardsController " + $rootScope.userToken);
     //console.log("vendorId from VendorRewardsController " + $rootScope.vendorId);
-    console.log("LOL");
+    //console.log("LOL");
     var encodedUserToken = encodeURIComponent($rootScope.userToken);
-    console.log(encodedUserToken);
+    //console.log(encodedUserToken);
     var encodedVendorId =  encodeURIComponent($routeParams.id);
     $scope.uri='http://api.clozerr.com/v2/vendor/offers/rewardspage?access_token='+ encodedUserToken +'&vendor_id='+ encodedVendorId;
-    console.log($scope.uri);
+    //console.log($scope.uri);
 
     $http.
     get($scope.uri).
     success(function(data){
-        $scope.offers = data.offers;
-        console.log($scope.offers);
+        $scope.data = data;
+        //console.log($scope.data);
 
 
 
     });
 };
 
+exports.CheckInController = function( $scope, $http, $rootScope, $timeout){
+
+    $scope.checkIn = function(data, offer){
+
+        //console.log(data);
+        console.log(offer);
+
+        $scope.uri = 'http://api.clozerr.com/v2/offers/checkin/create/?access_token='+$rootScope.userToken+'&vendor_id='+data._id+'&offer_id='+offer._id;
+
+        //console.log($scope.uri);
+
+        $http.
+        get($scope.uri).
+        success(function(data) {
+
+            //console.log('Data after put request success is: ');
+            //$scope.data = data;
+            console.log($scope.data);
+
+            $timeout(function() {
+                $scope.data = {};
+            }, 5000);
+        });
+    };
+};
 
 
 

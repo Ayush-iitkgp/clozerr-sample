@@ -100,3 +100,11 @@ exports.userPinned = function(){
 
     };
 };
+
+exports.checkIn = function(){
+    return{
+        restrict:"E",
+        controller:"CheckInController",
+        templateUrl:"check-in.html"
+    };
+};
