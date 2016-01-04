@@ -99,12 +99,12 @@ exports.VendorOffersController = function ($scope, $rootScope, $routeParams, $ht
     });
 };
 
-exports.CheckInController = function( $scope, $http, $rootScope, $timeout){
+exports.CheckInController = function( $scope, $http, $rootScope, $window){
 
     $scope.checkIn = function(data, offer){
 
         //console.log(data);
-        console.log(offer);
+        //console.log(offer);
 
         $scope.uri = 'http://api.clozerr.com/v2/offers/checkin/create/?access_token='+$rootScope.userToken+'&vendor_id='+data._id+'&offer_id='+offer._id;
 
@@ -112,16 +112,26 @@ exports.CheckInController = function( $scope, $http, $rootScope, $timeout){
 
         $http.
         get($scope.uri).
-        success(function(data) {
+        success(function(returnedData) {
+            //console.log(returnedData);
 
             //console.log('Data after put request success is: ');
-            //$scope.data = data;
-            console.log($scope.data);
+            $scope.returnedData = returnedData;
+            //console.log($scope.returnedData);
+            //console.log(returnedData.pin);
+            $window.alert(offer.caption + "\n" + offer.description + "\n"+ "Code: " + returnedData.pin +"\n" + "Show the Coe to Staff to Avail the Offer");
+            //console.log($scope.data);
 
-            $timeout(function() {
-                $scope.data = {};
-            }, 5000);
+            /* $timeout(function() {
+                $scope.returnedData = {};
+            }, 5000); */
         });
+
+
+
+
+
+
     };
 };
 

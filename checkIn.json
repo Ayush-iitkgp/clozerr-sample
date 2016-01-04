@@ -10,3 +10,6 @@
   "vendor":"5658458eaa74e71e7eed650e",
   "_id":"568ab5cc08d2d09524a6b0fc"
 }
+
+
+// git config --global http.proxy http[s]//Ayush-iitkgp:Kgp%401234@10.3.100.207:8080
